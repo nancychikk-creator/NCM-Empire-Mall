@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NCM Empire Mall</title>
+<meta name="description" content="NCM Empire Mall: hair, skincare, clothing, body enhancement and marriage & love. Pay in full or pay small small.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0d3b34;--ink2:#14584d;--gold:#c99a2e;--paper:#f6f7f4;--card:#fff;--text:#1d2624;--mute:#5b6764;--line:#dfe4e1;--r:14px;
+--hair:#6b3a78;--skin:#3f7d5f;--cloth:#2f4a8a;--body:#b5532f;--love:#b03a5b}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font:16px/1.55 "Nunito Sans",system-ui,sans-serif;color:var(--text);background:var(--paper)}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.15;margin:0 0 .5rem;color:var(--ink)}
+h1{font-size:clamp(2rem,7vw,3.4rem);font-weight:800}h2{font-size:clamp(1.5rem,4.5vw,2.1rem)}h3{font-size:1.1rem}
+a{color:inherit}button,select,input{font:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.wrap{max-width:1100px;margin:0 auto;padding:0 16px}
+section{padding:36px 0}
+.demo-bar{background:#fff3cd;color:#5c4400;font-size:.85rem;text-align:center;padding:6px 12px}
+header{background:var(--ink);color:#fff;position:sticky;top:0;z-index:20}
+.hrow{display:flex;align-items:center;gap:12px;padding:10px 0}
+.logo{font-family:Fraunces,serif;font-weight:800;font-size:1.25rem;text-decoration:none;color:#fff;white-space:nowrap}
+.logo b{color:var(--gold)}
+.search{flex:1;display:flex;background:#fff;border-radius:999px;overflow:hidden;min-width:0}
+.search input{flex:1;border:0;padding:10px 16px;min-width:0;background:transparent}
+.search button{border:0;background:var(--gold);color:#201700;font-weight:700;padding:0 16px;cursor:pointer}
+.cartbtn{background:transparent;border:2px solid var(--gold);color:#fff;border-radius:999px;padding:8px 14px;cursor:pointer;font-weight:700;white-space:nowrap}
+nav.depts{background:var(--ink2)}
+nav.depts .wrap{display:flex;gap:6px;overflow-x:auto;padding:8px 16px}
+nav.depts button{flex:none;border:0;background:transparent;color:#e7f1ee;padding:6px 12px;border-radius:999px;cursor:pointer;font-weight:600}
+nav.depts button[aria-pressed=true]{background:#fff;color:var(--ink)}
+.hero{background:var(--ink);color:#fff;padding:44px 0 52px}
+.hero h1{color:#fff;max-width:14ch}.hero p{max-width:46ch;color:#d3e4df;font-size:1.1rem}
+.btn{display:inline-block;border:0;border-radius:999px;padding:12px 22px;font-weight:700;cursor:pointer;text-decoration:none;background:var(--gold);color:#201700}
+.btn.alt{background:transparent;border:2px solid #fff;color:#fff;margin-left:8px}
+.btn.dark{background:var(--ink);color:#fff}.btn[disabled]{opacity:.5;cursor:not-allowed}
+.dgrid{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(210px,1fr))}
+.dcard{background:var(--card);border-radius:var(--r);border:1px solid var(--line);border-top:6px solid var(--c);padding:16px;text-align:left;cursor:pointer}
+.dcard p{margin:.2rem 0 0;color:var(--mute);font-size:.92rem}
+.pgrid{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(210px,1fr))}
+.pcard{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column}
+.ph{aspect-ratio:4/3;display:grid;place-items:center;background:var(--c);color:#fff;font:800 2.6rem Fraunces,serif;position:relative}
+.ph small{position:absolute;bottom:6px;left:8px;font:600 .7rem "Nunito Sans";opacity:.9}
+.pb{padding:12px;display:flex;flex-direction:column;gap:4px;flex:1}
+.price{font-weight:800;font-size:1.1rem}.tag{font-size:.8rem;color:var(--mute)}
+.badge{display:inline-block;font-size:.72rem;font-weight:700;border-radius:999px;padding:2px 8px;background:#e4f1ea;color:#1d5a3c}
+.badge.off{background:#fde8e8;color:#8a1f1f}
+.pb .btn{margin-top:auto;font-size:.92rem;padding:9px 14px}
+.bar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:0 0 16px}
+.bar select{padding:8px 10px;border:1px solid var(--line);border-radius:10px;background:#fff}
+.steps{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));counter-reset:s;padding:0;list-style:none}
+.steps li{background:var(--card);border-left:5px solid var(--gold);border-radius:10px;padding:14px;counter-increment:s}
+.steps li::before{content:"Step " counter(s);display:block;font-weight:700;color:var(--ink2);margin-bottom:2px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px}
+.calc{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+label{display:block;font-weight:600;font-size:.9rem;margin-bottom:4px}
+input[type=number],select.f{width:100%;padding:10px;border:1px solid var(--line);border-radius:10px;background:#fff}
+table{width:100%;border-collapse:collapse;font-size:.92rem}
+th,td{padding:7px 6px;border-bottom:1px solid var(--line);text-align:left}td.n,th.n{text-align:right}
+.tw{overflow-x:auto}
+.note{font-size:.85rem;color:var(--mute)}.ok{color:#1d5a3c;font-weight:700}
+.info{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+footer{background:var(--ink);color:#cfe0db;padding:28px 0;font-size:.92rem}
+footer a{color:#fff}footer ul{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:6px 18px}
+dialog{border:0;border-radius:var(--r);padding:0;width:min(560px,94vw);max-height:92vh}
+dialog::backdrop{background:rgba(0,0,0,.55)}
+.dl{padding:16px}.x{float:right;border:0;background:#eee;border-radius:50%;width:34px;height:34px;cursor:pointer;font-size:1.1rem}
+.crow{display:flex;justify-content:space-between;gap:8px;padding:8px 0;border-bottom:1px solid var(--line)}
+.crow button{border:0;background:#eee;border-radius:8px;cursor:pointer;padding:2px 8px}
+.hidden{display:none}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="demo-bar">Demo version: sample items and example plans only. No real payments or orders are taken on this site yet.</div>
+<header>
+ <div class="wrap hrow">
+  <a class="logo" href="#top">NCM <b>Empire</b> Mall</a>
+  <form class="search" id="sform" role="search"><input id="q" type="search" placeholder="Search products" aria-label="Search products"><button type="submit">Search</button></form>
+  <button class="cartbtn" id="cartOpen">Cart (<span id="cc">0</span>)</button>
+ </div>
+ <nav class="depts" aria-label="Departments"><div class="wrap" id="dnav"></div></nav>
+</header>
+
+<main id="top">
+<section class="hero"><div class="wrap">
+ <h1>Quality you want. Pay your way.</h1>
+ <p>Welcome to NCM Empire Mall. Shop hair, skincare, clothing, body enhancement and marriage & love in one place, and choose to pay in full or pay small small.</p>
+ <a class="btn" href="#shop">Start shopping</a><a class="btn alt" href="#psp">How pay small small works</a>
+</div></section>
+
+<section><div class="wrap"><h2>Our five departments</h2><div class="dgrid" id="dcards"></div></div></section>
+
+<section id="shop"><div class="wrap">
+ <h2 id="shopTitle">All products</h2>
+ <div class="bar">
+  <select id="sort" aria-label="Sort products"><option value="new">Newest first</option><option value="lo">Price: low to high</option><option value="hi">Price: high to low</option></select>
+  <select id="stockf" aria-label="Availability"><option value="all">All items</option><option value="in">In stock only</option></select>
+  <span class="note" id="count"></span>
+ </div>
+ <div class="pgrid" id="pgrid"></div>
+</div></section>
+
+<section id="psp"><div class="wrap">
+ <h2>Pay small small, explained</h2>
+ <ol class="steps">
+  <li>Pick a product marked with instalment options.</li>
+  <li>Choose a plan and apply. Your application is reviewed by NCM Empire.</li>
+  <li>Pay your first payment. We confirm it against our bank or payment records.</li>
+  <li>Pay on your due dates. Delivery follows our published terms, not just a payment amount.</li>
+ </ol>
+ <div class="panel" style="margin-top:16px">
+  <h3>Try the instalment calculator (demo)</h3>
+  <p class="note">The plans below are examples. NCM Empire will set the real periods, deposits and fees before this goes live.</p>
+  <div class="calc">
+   <div><label for="cp">Product price (₦)</label><input id="cp" type="number" min="1000" step="500" value="50000"></div>
+   <div><label for="cpl">Plan</label><select id="cpl" class="f"></select></div>
+  </div>
+  <div id="cout" style="margin-top:12px"></div>
+ </div>
+</div></section>
+
+<section><div class="wrap"><div class="info">
+ <div class="panel"><h3>Delivery</h3><p class="note">Delivery areas, fees and timelines will be published here once confirmed by NCM Empire.</p></div>
+ <div class="panel"><h3>Payment</h3><p class="note">Bank transfer and card payment (Paystack) will be added after testing. We never ask for your card PIN, OTP or bank password.</p></div>
+ <div class="panel"><h3>Returns</h3><p class="note">Our returns and refund policy will be published before live sales begin.</p></div>
+ <div class="panel"><h3>Support</h3><p><a id="wa0" href="#" target="_blank" rel="noopener">Chat with us on WhatsApp</a></p></div>
+</div></div></section>
+</main>
+
+<footer><div class="wrap">
+ <strong>NCM Empire Mall</strong>, Nigeria
+ <ul><li><a href="#">Privacy policy</a></li><li><a href="#">Terms and conditions</a></li><li><a href="#">Instalment agreement</a></li><li><a href="#">Delivery policy</a></li><li><a href="#">Refund policy</a></li></ul>
+ <p class="note" style="color:#9fbab3">Policy pages are placeholders and will be written and reviewed before live sales.</p>
+</div></footer>
+
+<dialog id="pd"><div class="dl" id="pdb"></div></dialog>
+<dialog id="cd"><div class="dl" id="cdb"></div></dialog>
+
+<script>
+/* ===== EDIT THIS SECTION ===== */
+const WHATSAPP = "234XXXXXXXXXX"; // your number: 234 + number without the first 0
+const DEPTS = [
+ {id:"hair",name:"NCM Empire Hair",short:"Hair",color:"#6b3a78",blurb:"Wigs, braided wigs, locs, raw hair, extensions and tools."},
+ {id:"skin",name:"NCM Empire Skincare",short:"Skincare",color:"#3f7d5f",blurb:"Safe, honest skincare. No bleaching."},
+ {id:"cloth",name:"NCM Empire Clothing",short:"Clothing",color:"#2f4a8a",blurb:"Adult and children's clothing, footwear, bonnets, accessories."},
+ {id:"body",name:"NCM Empire Body Enhancement",short:"Body",color:"#b5532f",blurb:"Waist trainers, fitness wear, sweat belts, workout accessories."},
+ {id:"love",name:"NCM Empire Marriage & Love",short:"Marriage & Love",color:"#b03a5b",blurb:"Relationship education and love-themed gifts."}
+];
+/* Example plans only. The business sets real values. */
+const PLANS = [
+ {id:"w8",name:"Weekly: 8 payments",freq:"week",n:8,initialPct:30,feePct:0},
+ {id:"w12",name:"Weekly: 12 payments",freq:"week",n:12,initialPct:30,feePct:0},
+ {id:"m3",name:"Monthly: 3 payments",freq:"month",n:3,initialPct:40,feePct:0},
+ {id:"m6",name:"Monthly: 6 payments",freq:"month",n:6,initialPct:40,feePct:0}
+];
+/* SAMPLE items only. Replace with your real products (price in naira). */
+const PRODUCTS = [
+ {id:"S-HAIR-1",dept:"hair",sub:"Wigs",name:"Sample wig (replace me)",price:150000,stock:5,vars:["12 inch","16 inch","20 inch"],plans:["w8","m3"],added:3},
+ {id:"S-HAIR-2",dept:"hair",sub:"Extensions",name:"Sample hair extension (replace me)",price:45000,stock:0,vars:["Black","Brown"],plans:[],added:2},
+ {id:"S-SKIN-1",dept:"skin",sub:"Soaps",name:"Sample facial soap (replace me)",price:6500,stock:20,vars:[],plans:[],added:5},
+ {id:"S-SKIN-2",dept:"skin",sub:"Serums",name:"Sample serum (replace me)",price:18000,stock:8,vars:[],plans:["w8"],added:4},
+ {id:"S-CLO-1",dept:"cloth",sub:"Footwear",name:"Sample unisex sandal (replace me)",price:22000,stock:10,vars:["40","42","44"],plans:["w8","m3"],added:6},
+ {id:"S-CLO-2",dept:"cloth",sub:"Bonnets",name:"Sample reversible bonnet (replace me)",price:4500,stock:30,vars:["Black/Gold","Blue/Red"],plans:[],added:7},
+ {id:"S-BODY-1",dept:"body",sub:"Waist trainers",name:"Sample waist trainer (replace me)",price:28000,stock:12,vars:["M","L","XL"],plans:["w8","w12"],added:1},
+ {id:"S-LOVE-1",dept:"love",sub:"Gifts",name:"Sample love gift set (replace me)",price:35000,stock:6,vars:[],plans:["m3"],added:8}
+];
+/* ===== END EDIT SECTION ===== */
+
+const $=s=>document.querySelector(s);
+const naira=k=>"₦"+(k/100).toLocaleString("en-NG",{minimumFractionDigits:0,maximumFractionDigits:2});
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const dept=id=>DEPTS.find(d=>d.id===id);
+let state={dept:"all",q:"",sort:"new",stock:"all"},cart=[];
+try{cart=JSON.parse(localStorage.getItem("ncm_cart")||"[]")}catch(e){cart=[]}
+const saveCart=()=>{try{localStorage.setItem("ncm_cart",JSON.stringify(cart))}catch(e){}};
+
+/* Instalment maths in kobo (whole numbers) so totals always match. */
+function schedule(priceNaira,plan,start=new Date()){
+ const price=Math.round(priceNaira*100);
+ const fee=Math.round(price*plan.feePct/100);
+ const total=price+fee;
+ const initial=Math.round(total*plan.initialPct/100);
+ const rest=total-initial;
+ const each=Math.floor(rest/plan.n);
+ const rows=[{label:"First payment (today)",date:new Date(start),amt:initial}];
+ let sum=initial;
+ for(let i=1;i<=plan.n;i++){
+  const d=new Date(start);
+  if(plan.freq==="week")d.setDate(d.getDate()+7*i);else d.setMonth(d.getMonth()+i);
+  const amt=i===plan.n?rest-each*(plan.n-1):each;
+  sum+=amt;rows.push({label:"Payment "+i,date:d,amt});
+ }
+ return{price,fee,total,initial,rows,sum,end:rows[rows.length-1].date};
+}
+const fd=d=>d.toLocaleDateString("en-NG",{day:"numeric",month:"short",year:"numeric"});
+function scheduleHTML(s,plan){
+ return `<div class="tw"><table><tr><th>When</th><th>Date</th><th class="n">Amount</th></tr>${s.rows.map(r=>`<tr><td>${r.label}</td><td>${fd(r.date)}</td><td class="n">${naira(r.amt)}</td></tr>`).join("")}</table></div>
+ <p>Full price: <b>${naira(s.price)}</b> | Fees: <b>${naira(s.fee)}</b> | Total payable: <b>${naira(s.total)}</b></p>
+ <p>Expected completion: <b>${fd(s.end)}</b> | Payments add up: <span class="ok">${s.sum===s.total?"Yes, matches total":"CHECK ERROR"}</span></p>
+ <p class="note">Example only. Application review, payment verification and delivery conditions apply. Delivery is not automatic after a payment milestone. Cancellation, refund and missed-payment rules will be in the instalment agreement.</p>`;
+}
+
+function renderNav(){
+ const items=[{id:"all",short:"All"}].concat(DEPTS);
+ $("#dnav").innerHTML=items.map(d=>`<button data-d="${d.id}" aria-pressed="${state.dept===d.id}">${esc(d.short)}</button>`).join("");
+ $("#dcards").innerHTML=DEPTS.map(d=>`<button class="dcard" style="--c:${d.color}" data-d="${d.id}"><h3>${esc(d.name)}</h3><p>${esc(d.blurb)}</p></button>`).join("");
+}
+function list(){
+ let L=PRODUCTS.filter(p=>state.dept==="all"||p.dept===state.dept);
+ const q=state.q.trim().toLowerCase();
+ if(q)L=L.filter(p=>(p.name+" "+p.sub+" "+dept(p.dept).name).toLowerCase().includes(q));
+ if(state.stock==="in")L=L.filter(p=>p.stock>0);
+ if(state.sort==="lo")L.sort((a,b)=>a.price-b.price);
+ else if(state.sort==="hi")L.sort((a,b)=>b.price-a.price);
+ else L.sort((a,b)=>b.added-a.added);
+ return L;
+}
+function renderProducts(){
+ const L=list();
+ $("#shopTitle").textContent=state.dept==="all"?"All products":dept(state.dept).name;
+ $("#count").textContent=L.length+" item"+(L.length===1?"":"s");
+ $("#pgrid").innerHTML=L.length?L.map(p=>{
+  const d=dept(p.dept),out=p.stock<1;
+  return `<article class="pcard" style="--c:${d.color}"><div class="ph" aria-hidden="true">${esc(d.short[0])}<small>Photo coming soon</small></div>
+  <div class="pb"><span class="tag">${esc(d.short)} · ${esc(p.sub)}</span><h3>${esc(p.name)}</h3>
+  <div class="price">${naira(p.price*100)}</div>
+  <div><span class="badge ${out?"off":""}">${out?"Out of stock":"In stock"}</span> <span class="badge">Pay in full</span>${p.plans.length?' <span class="badge">Pay small small</span>':""}</div>
+  <button class="btn dark" data-view="${p.id}">View details</button></div></article>`}).join(""):'<p>No products match. Try another search or department.</p>';
+}
+function setDept(id){state.dept=id;renderNav();renderProducts();$("#shop").scrollIntoView()}
+
+function openProduct(id){
+ const p=PRODUCTS.find(x=>x.id===id),out=p.stock<1,d=dept(p.dept);
+ const pl=p.plans.map(i=>PLANS.find(x=>x.id===i)).filter(Boolean);
+ $("#pdb").innerHTML=`<button class="x" data-close="pd" aria-label="Close">×</button>
+ <span class="tag">${esc(d.name)} · ${esc(p.sub)}</span><h2>${esc(p.name)}</h2>
+ <p class="price">${naira(p.price*100)}</p>
+ <p><span class="badge ${out?"off":""}">${out?"Out of stock":"In stock"}</span></p>
+ ${p.vars.length?`<label for="pv">Choose option</label><select id="pv" class="f">${p.vars.map(v=>`<option>${esc(v)}</option>`).join("")}</select>`:""}
+ <p style="margin-top:12px"><button class="btn" id="addb" ${out?"disabled":""}>${out?"Out of stock":"Add to cart"}</button></p>
+ ${pl.length?`<h3>Pay small small options (example)</h3><label for="ppl">Plan</label><select id="ppl" class="f">${pl.map(x=>`<option value="${x.id}">${esc(x.name)}</option>`).join("")}</select><div id="pps"></div>`:'<p class="note">This item is available for full payment only.</p>'}
+ <p class="note">Delivery information will be shown here when confirmed.</p>`;
+ $("#pd").showModal();
+ $("#addb").onclick=()=>{addCart(p.id,p.vars.length?$("#pv").value:"");$("#pd").close()};
+ if(pl.length){const f=()=>{const pn=PLANS.find(x=>x.id===$("#ppl").value);$("#pps").innerHTML=scheduleHTML(schedule(p.price,pn),pn)};$("#ppl").onchange=f;f()}
+}
+function addCart(id,v){
+ const p=PRODUCTS.find(x=>x.id===id),ex=cart.find(c=>c.id===id&&c.v===v),have=ex?ex.q:0;
+ if(have+1>p.stock){alert("Sorry, no more stock available for this item.");return}
+ if(ex)ex.q++;else cart.push({id,v,q:1});
+ saveCart();renderCart();
+}
+function renderCart(){
+ $("#cc").textContent=cart.reduce((a,c)=>a+c.q,0);
+ let t=0;
+ const rows=cart.map((c,i)=>{const p=PRODUCTS.find(x=>x.id===c.id);t+=p.price*100*c.q;
+  return `<div class="crow"><div>${esc(p.name)}${c.v?" ("+esc(c.v)+")":""}<br><span class="note">${naira(p.price*100)} each</span></div><div><button data-m="${i}" aria-label="Remove one">−</button> ${c.q} <button data-p="${i}" aria-label="Add one">+</button></div></div>`}).join("");
+ const msg=encodeURIComponent("Hello NCM Empire, I would like to enquire about:\n"+cart.map(c=>{const p=PRODUCTS.find(x=>x.id===c.id);return c.q+" x "+p.name+(c.v?" ("+c.v+")":"")}).join("\n"));
+ $("#cdb").innerHTML=`<button class="x" data-close="cd" aria-label="Close">×</button><h2>Your cart</h2>${cart.length?rows+`<p class="price">Total: ${naira(t)}</p>
+ <p><a class="btn" target="_blank" rel="noopener" href="https://wa.me/${WHATSAPP}?text=${msg}">Enquire on WhatsApp</a></p>
+ <p class="note">Online checkout is coming in a later phase. For now, send your cart to us on WhatsApp. We confirm availability and payment details with you directly.</p>`:"<p>Your cart is empty.</p>"}`;
+}
+function calc(){
+ const pn=PLANS.find(x=>x.id===$("#cpl").value),price=parseFloat($("#cp").value);
+ $("#cout").innerHTML=price>0?scheduleHTML(schedule(price,pn),pn):'<p class="note">Enter a price to see the schedule.</p>';
+}
+
+document.addEventListener("click",e=>{
+ const t=e.target.closest("[data-d],[data-view],[data-close],[data-m],[data-p]");if(!t)return;
+ if(t.dataset.d)setDept(t.dataset.d);
+ else if(t.dataset.view)openProduct(t.dataset.view);
+ else if(t.dataset.close)$("#"+t.dataset.close).close();
+ else if(t.dataset.m!==undefined){const i=+t.dataset.m;cart[i].q--;if(cart[i].q<1)cart.splice(i,1);saveCart();renderCart()}
+ else if(t.dataset.p!==undefined){const c=cart[+t.dataset.p];addCart(c.id,c.v)}
+});
+$("#sform").onsubmit=e=>{e.preventDefault();state.q=$("#q").value;renderProducts();$("#shop").scrollIntoView()};
+$("#sort").onchange=e=>{state.sort=e.target.value;renderProducts()};
+$("#stockf").onchange=e=>{state.stock=e.target.value;renderProducts()};
+$("#cartOpen").onclick=()=>{renderCart();$("#cd").showModal()};
+$("#cpl").innerHTML=PLANS.map(x=>`<option value="${x.id}">${esc(x.name)}</option>`).join("");
+$("#cpl").onchange=calc;$("#cp").oninput=calc;
+$("#wa0").href="https://wa.me/"+WHATSAPP;
+renderNav();renderProducts();renderCart();calc();
+</script>
+</body>
+</html>
