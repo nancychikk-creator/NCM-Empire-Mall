@@ -144,9 +144,9 @@ dialog::backdrop{background:rgba(0,0,0,.55)}
 
 <script>
 /* ===== EDIT THIS SECTION ===== */
-const LOGO_FILE = "logo.png.jpg";     // your logo file name (upload it next to index.html). Use "" for text-only.
+const LOGO_FILES = ["logo.png","logo.jpg","logo.jpeg","logo.png.jpg","logo..jpg"]; // the site uses the first one that exists
 const LOGO_HAS_NAME = false;     // change to true if your logo image already contains the words NCM Empire Mall
-const BANNER_FILE = "banner.jpg.png"; // your banner file name. Use "" for plain green banner.
+const BANNER_FILES = ["banner.jpg","banner.png","banner.jpeg","banner.jpg.png","banner..png"];
 const WHATSAPP = "234XXXXXXXXXX"; // your number: 234 + number without the first 0
 const DEPTS = [
  {id:"hair",name:"NCM Empire Hair",short:"Hair",color:"#6b3a78",blurb:"Wigs, braided wigs, locs, raw hair, extensions and tools."},
@@ -291,8 +291,9 @@ $("#cpl").onchange=calc;$("#cp").oninput=calc;
 $("#wa0").href="https://wa.me/"+WHATSAPP;
 renderNav();renderProducts();renderCart();calc();
 /* Logo and banner: shown only if the file exists, otherwise the site keeps its default look */
-if(LOGO_FILE){const im=new Image();im.onload=()=>{const l=$("#logoimg");l.src=LOGO_FILE;l.hidden=false;if(LOGO_HAS_NAME)$("#logotxt").hidden=true};im.src=LOGO_FILE}
-if(BANNER_FILE){const bi=new Image();bi.onload=()=>{$("#hero").style.backgroundImage="linear-gradient(rgba(13,59,52,.72),rgba(13,59,52,.72)),url('"+BANNER_FILE+"')"};bi.src=BANNER_FILE}
+function firstImage(list,ok){const t=i=>{if(i>=list.length)return;const im=new Image();im.onload=()=>ok(list[i]);im.onerror=()=>t(i+1);im.src=list[i]};t(0)}
+firstImage(LOGO_FILES,f=>{const l=$("#logoimg");l.src=f;l.hidden=false;if(LOGO_HAS_NAME)$("#logotxt").hidden=true});
+firstImage(BANNER_FILES,f=>{$("#hero").style.backgroundImage="linear-gradient(rgba(13,59,52,.72),rgba(13,59,52,.72)),url('"+f+"')"});
 </script>
 </body>
 </html>
